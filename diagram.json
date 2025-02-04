@@ -1,0 +1,79 @@
+{
+    "version": 1,
+    "author": "Isabella Carvalho Andrade",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "board-pi-pico-w",
+        "id": "pico",
+        "top": 0,
+        "left": 0,
+        "attrs": { "builder": "pico-sdk" }
+      },
+      {
+        "type": "wokwi-pushbutton",
+        "id": "btn1",
+        "top": 25.4,
+        "left": -76.8,
+        "attrs": { "color": "black" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 188.4,
+        "left": -140.2,
+        "attrs": { "color": "green" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": 92.4,
+        "left": -140.2,
+        "attrs": { "color": "blue" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led3",
+        "top": 140.4,
+        "left": -140.2,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r4",
+        "top": 282.35,
+        "left": -115.2,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": 253.55,
+        "left": -115.2,
+        "attrs": { "value": "330" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 311.15,
+        "left": -115.2,
+        "attrs": { "value": "330" }
+      }
+    ],
+    "connections": [
+      [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+      [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+      [ "pico:GND.1", "btn1:1.r", "black", [ "h0" ] ],
+      [ "pico:GP5", "btn1:2.r", "green", [ "h0" ] ],
+      [ "r2:2", "pico:GND.4", "green", [ "h37.2", "v-83.19" ] ],
+      [ "pico:GND.4", "r1:2", "black", [ "h-25.25", "v140.79" ] ],
+      [ "r4:2", "pico:GND.4", "green", [ "h37.2", "v-111.99" ] ],
+      [ "r4:1", "led3:C", "green", [ "h-38.4", "v-105.6" ] ],
+      [ "r2:1", "led2:C", "green", [ "h-38.4", "v-124.8" ] ],
+      [ "r1:1", "led1:C", "green", [ "h-38.4", "v-86.4" ] ],
+      [ "pico:GP13", "led1:A", "green", [ "h-82.85", "v63.99" ] ],
+      [ "pico:GP12", "led3:A", "green", [ "h-92.45", "v25.59" ] ],
+      [ "pico:GP11", "led2:A", "green", [ "h-82.85", "v-12.85" ] ]
+    ],
+    "dependencies": {}
+  }
