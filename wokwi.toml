@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "build/one-shot-LED.uf2"
+elf = "build/one-shot-LED.elf"
